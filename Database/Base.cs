@@ -81,7 +81,7 @@ namespace Database
                         OpcoesBase opcoes = (OpcoesBase)info.GetCustomAttribute(typeof(OpcoesBase));
                         if(opcoes != null)
                         {
-                            if (info.PropertyType == typeof(double))
+                            if (info.PropertyType == typeof(double)) // por alguma razão o orm não estava tratando valores do tipo double, essa foi a solução que encontrei para tal.
                             {
                                 double valor;
                                 if (double.TryParse(reader[info.Name].ToString(), out valor))
@@ -221,7 +221,7 @@ namespace Database
                         OpcoesBase opcoes = (OpcoesBase)info.GetCustomAttribute(typeof(OpcoesBase));
                         if (opcoes != null)
                         {
-                            if (info.PropertyType == typeof(double))
+                            if (info.PropertyType == typeof(double)) // por alguma razão o orm não estava tratando valores do tipo double, essa foi a solução que encontrei para tal.
                             {
                                 double valor;
                                 if (double.TryParse(reader[info.Name].ToString(), out valor))

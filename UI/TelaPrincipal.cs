@@ -53,5 +53,33 @@ namespace Sistema_Onibus
             tela.Show();
 
         }
+
+        private void btnOnibus_Click(object sender, EventArgs e)
+        {
+            tela?.Close();
+            tela = new TelaOnibus
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill,
+                FormBorderStyle = FormBorderStyle.None,
+            };
+            telaPainel.Controls.Add(tela);
+            tela.Show();
+
+        }
+
+        private void btnRotas_Click(object sender, EventArgs e)
+        {
+            tela?.Close();
+            tela = new TelaRota
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill,
+                FormBorderStyle = FormBorderStyle.None,
+            };
+            telaPainel.Controls.Add(tela);
+            tela.Show();
+
+        }
     }
 }
